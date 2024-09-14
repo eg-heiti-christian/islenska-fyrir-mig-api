@@ -1,9 +1,13 @@
-const express = require('express');
-const cors = require("cors");
-const morgan = require("morgan");
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
+
+//For env File 
+dotenv.config();
 
 // express routes
-const PresentTenseVerbConjugatorRoutes = require('./present-tense-verb-conjugator/routes');
+import PresentTenseVerbConjugatorRoutes from './present-tense-verb-conjugator/routes';
 
 const app = express();
 
