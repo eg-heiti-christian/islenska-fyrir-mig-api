@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // express routes
-import PresentTenseVerbConjugatorRoutes from './present-tense-verb-conjugator/routes';
+import Verbs from './verbs/routes';
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/', PresentTenseVerbConjugatorRoutes);
+app.use('/', Verbs);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

@@ -1,5 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
+// prisma migrate dev --name description
 
 generator client {
   provider = "prisma-client-js"
@@ -24,4 +25,14 @@ model Post {
   published Boolean @default(false)
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
+}
+
+model Verb {
+  id                    Int     @id @default(autoincrement())
+  singularFirstPerson   String
+  singularSecondPerson  String
+  singularThirdPerson   String
+  pluralFirstPerson     String
+  pluralSecondPerson    String
+  pluralThirdPerson     String
 }
