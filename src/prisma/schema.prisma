@@ -28,7 +28,27 @@ model Post {
 }
 
 model Verb {
+  id            Int     @id @default(autoincrement())
+  nominative    String
+  presentTense  VerbPresentTense?
+  pastTense     VerbPastTense?
+}
+model VerbPresentTense {
   id                    Int     @id @default(autoincrement())
+  verbId                Int     @unique
+  verb                  Verb    @relation(fields: [verbId], references: [id])
+  singularFirstPerson   String
+  singularSecondPerson  String
+  singularThirdPerson   String
+  pluralFirstPerson     String
+  pluralSecondPerson    String
+  pluralThirdPerson     String
+}
+
+model VerbPastTense {
+  id                    Int     @id @default(autoincrement())
+  verbId                Int     @unique
+  verb                  Verb    @relation(fields: [verbId], references: [id])
   singularFirstPerson   String
   singularSecondPerson  String
   singularThirdPerson   String
