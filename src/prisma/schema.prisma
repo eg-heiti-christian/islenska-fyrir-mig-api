@@ -29,7 +29,7 @@ model Post {
 
 model Verb {
   id            Int     @id @default(autoincrement())
-  nominative    String
+  infinitive    String
   presentTense  VerbPresentTense?
   pastTense     VerbPastTense?
 }
