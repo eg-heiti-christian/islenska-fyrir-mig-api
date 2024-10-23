@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // express routes
-import Verbs from './verbs/routes';
+import Routes from './routes';
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/', Verbs);
+app.use('/', Routes);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

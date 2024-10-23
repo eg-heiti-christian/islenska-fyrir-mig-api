@@ -6,7 +6,7 @@ const verbData: Prisma.VerbCreateInput[] = [
         infinitive: '',
         presentTense: {
             create: {
-                singularFirstPerson: '',
+                singularFirstPerson: 'á',
                 singularSecondPerson: '',
                 singularThirdPerson: '',
                 pluralFirstPerson: '',
